@@ -1,6 +1,10 @@
+/* make the  */
+
 .app{
   font-family:  'Poppins', sans-serif;
   margin: 2vw 5vw;
+  
+
 }
 .navbar{
     display: flex;
@@ -16,7 +20,7 @@
   text-decoration: none;
   color: rgb(146, 146, 146);
   font-weight: 700;
-  margin-bottom: 1vw;
+  margin-bottom: 5px;
   font-size: 12px;
 }
 
@@ -43,13 +47,13 @@
 
 .background{
   color: #ffffff;
-  font-size: 30VW;
+  font-size: 20VW;
   position: absolute;
-   top: 0;
+   top: 15vw;
    left: 0;
    bottom: 0;
    right: 0;
-   z-index: -1;
+   z-index: -2;
    overflow: hidden;
     margin: 0;
     padding: 0;
@@ -106,6 +110,73 @@
   font-size: 2.5rem;
 }
 
+.hang-lights{
+  position: absolute;
+  top: 0;
+  left: 5;
+  bottom: 0;
+  right: 2;
+  z-index: -1;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.about-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  margin-top: 10vh;
+  
+}
+
+.about-left{
+  margin-right: 5vw ;
+  min-width:30%;
+}
+
+.about-left h3{
+  font-size: 1.2rem;
+  font-weight: 500;
+  /* color: #141414; */
+  margin-bottom: 1vw;
+}
+
+.about-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-right h2{
+  font-size: 1.4rem;
+  font-weight: 600;
+  /* color: #141414; */
+  margin-bottom: 5vh;
+}
+
+.about-right p{
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.media-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 100px;
+  /* gap: 5px; */
+  flex-wrap: wrap;
+}
+
+.speaker, .video{
+  height: 21vw;
+}
+
+
+
 /* mobile screen */
 
 @media screen and (max-width: 768px){
@@ -131,13 +202,45 @@
     order: -1;
   }
 
-  
-
   .navbar nav a{
     margin: 0 10px;
   }
 
   .app-download{
     display: none;
+  }
+
+  .about-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40vh;
+    
+  }
+
+  .media-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .media-right, .media-left{
+    display: flex;
+    justify-content: center;
+  }
+
+  .speaker, .video{
+    width: 90%;
+    height: auto;
+  }
+}
+
+/* if the screen is bigger than 1200px add margin to the app */
+@media screen and (min-width: 1350px){
+  html{
+    margin-left: 22vw;
+    margin-right: 22vw;
   }
 }
