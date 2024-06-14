@@ -1,5 +1,6 @@
 import React from "react";
 import Product from "./Product";
+import { useRef, useState } from "react";
 
 function Products() {
   const products = [
@@ -53,13 +54,47 @@ function Products() {
     },
   ];
 
+  const scrollRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startPosition, setStartPosition] = useState(0);
+  const [startScrollLeft, setStartScrollLeft] = useState(0);
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartPosition(e.clientX);
+    setStartScrollLeft(scrollRef.current.scrollLeft);
+
+    scrollRef.current.style.cursor = 'grabbing';
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+
+    const delta = e.clientX - startPosition;
+    scrollRef.current.scrollLeft = startScrollLeft - delta;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    scrollRef.current.style.cursor = 'grab';
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+    scrollRef.current.style.cursor = 'grab';
+  };
+
   return (
-    <div className="products">
+    <div className="products ">
       <div className="product-title">
         <h1>Combine a perfect ecosystem for your home</h1>
       </div>
 
-      <div className="product-cards">
+      <div className="product-cards add-margin" ref={scrollRef}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseLeave}>
         {products.map((product, index) => (
           <Product key={index} product={product} />
         ))}

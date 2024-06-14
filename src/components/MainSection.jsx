@@ -2,12 +2,21 @@ import React from 'react'
 import mockup from '../assets/mockup.png'
 import { FaToggleOn } from "react-icons/fa";
 import { MdToggleOff } from "react-icons/md";
+import { MdToggleOn } from "react-icons/md";
 
 
 
-function MainSection() {
+
+
+
+function MainSection({ setIsDark, isDark}) {
+    const handleClick = () => {
+        console.log('clicked')
+        console.log(isDark)
+        setIsDark(!isDark)
+    }
   return (
-    <div className='main-top'>
+    <div className='main-top add-margin'>
         <div className='main-background'>
             {/* <h1 className='background'>Easy <span style={{
                 textAlign: "end", 
@@ -18,8 +27,16 @@ function MainSection() {
             
         </div>
         <div className='slogan'> 
-            <h1>Control your home with your fingertip</h1>
-            <MdToggleOff className='toggle' />
+            <h1 style={{
+                color: isDark ? "#f1f3f2" : "#141414"}
+            }>Control your home with your fingertip</h1>
+            <button onClick={handleClick} className={isDark ? "toggle active" : "toggle"} >
+
+                {isDark ? <MdToggleOn /> : <MdToggleOff />}
+                
+             
+            </button>
+            
         </div>
         <div className='mockup'>
             <img width={400}  src={mockup} alt='mockup'  />

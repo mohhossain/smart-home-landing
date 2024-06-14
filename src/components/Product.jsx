@@ -4,10 +4,10 @@ function Product({ product }) {
   return (
     <div className="product-card">
       <div className="product-image">
-        <img src={product.image} alt="product" />
+        <img src={product.image} alt="product" className="unselectable" />
       </div>
       <div className="product-info">
-        <h4>{product.name}</h4>
+        <h4 className="unselectable">{product.name}</h4>
       </div>
     </div>
   );

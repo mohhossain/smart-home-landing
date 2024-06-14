@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa6";
 
 function About() {
   return (
-    <div className='about-section'>
+    <div className='about-section add-margin'>
         <div className='about-left'>
             <h3>Discover new horizons of comfort</h3>
         </div>

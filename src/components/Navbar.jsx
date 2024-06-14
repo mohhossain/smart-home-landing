@@ -7,9 +7,16 @@ import glow from '../assets/glow.png'
 
 
 
-function Navbar() {
+
+
+function Navbar({isDark}) {
   return (
-    <div className='navbar'>
+    <div 
+        className={
+            isDark? 
+            "dark-mode-nav add-margin" : "navbar add-margin"
+        }
+    >
         <nav>
             <NavLink to="/" exact>home</NavLink>
             <NavLink to="/about">about</NavLink>
@@ -17,15 +24,16 @@ function Navbar() {
             <NavLink to="/contact">contact</NavLink>
         </nav>
 
-        <div className='hang-lights' >
-            <img height={400} src={lights} alt="lights" />
-        </div>
+
 
         <div className="logo">
-            <h3>Logo</h3>
+            <h3>Zome.</h3>
         </div>
 
-        <div className="app-download">
+        <div className={
+            isDark ? 
+            "dark-mode-download" : "app-download"
+        }>
             <button> <IoLogoApple /> App Store</button>
             <button><FaGooglePlay/> Google Play</button>
         </div>

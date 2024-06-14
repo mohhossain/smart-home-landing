@@ -19,7 +19,7 @@ function Media() {
             className='video'
             style={{
                 borderRadius: "20px",
-            }} autoplay loop controls> 
+            }} autoPlay loop controls> 
                 <source src={appVideo} type='video/mp4' />
             </video>
         </div>
