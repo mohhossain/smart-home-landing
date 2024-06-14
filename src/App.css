@@ -2,13 +2,15 @@
 
 .app{
   font-family:  'Poppins', sans-serif;
-  margin: 2vw 5vw;
+  /* margin: 2vw 5vw; */
+  
   
 
 }
 .navbar{
     display: flex;
     justify-content: space-between;
+    margin-top: 2vw;
 }
 
 .navbar nav{
@@ -164,22 +166,88 @@
 .media-section{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 100px;
-  /* gap: 5px; */
+  gap: 5px;
   flex-wrap: wrap;
 }
 
 .speaker, .video{
-  height: 21vw;
+  height: 450px;
+  min-height: 21vw;
 }
 
+.banner{
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.4), 
+    rgba(0, 0, 0, 0.4)
+  ), url('./assets/banner.png') no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  padding-top: 7vw;
+  padding-bottom: 7vw;
+}
+
+.banner-content{
+  width: 30%;
+}
+
+.banner-content h1{
+  color: #f1f3f2;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1vw;
+}
+
+.banner-content p{
+  color: #f1f3f2;
+  font-size: .8rem;
+  font-weight: 400;
+  margin-bottom: 1vw;
+}
+
+.banner-content button{
+  color: #f1f3f2;
+  background-color: transparent;
+  border: 1px solid #f1f3f2;
+  padding: 10px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 0 5px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.products{
+  width: 100%;
+  margin-top: 100px;
+}
+
+.product-title h1{
+  text-align: center;
+  margin-bottom: 5vw;
+  font-weight: 400;
+  font-size: 3rem;
+}
 
 
 /* mobile screen */
 
 @media screen and (max-width: 768px){
+  .app{
+    overflow-x: hidden;
+  }
+
+  .mockup img{
+    width: 70%;
+  }
   .main-top{
     display: flex;
     flex-direction: column;
@@ -234,6 +302,20 @@
   .speaker, .video{
     width: 90%;
     height: auto;
+  }
+
+  .banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+    
+  }
+
+  .banner-content{
+    width: 80%;
+    text-align: center;
   }
 }
 
