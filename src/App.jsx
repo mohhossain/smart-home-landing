@@ -18,10 +18,29 @@ function App() {
   const[isLight, setLights] = useState(false)
 
   useEffect(() => {
-    // light flicker effect for 2 seconds, change the lights to glow after continiously for 2 seconds
-    setTimeout(() => {
-      setLights(isDark)
-    }, 1000)
+    if (!isDark) {
+      setLights(false);
+      return;
+    }
+    
+    let intervalId;
+
+    const toggleLight = () => {
+      setLights(prev => !prev);
+    };
+
+    intervalId = setInterval(toggleLight, 400);
+
+    const timeoutId = setTimeout(() => {
+      clearInterval(intervalId);
+      setLights(true); // ensure the light is on after 2 seconds
+    }, 2000);
+
+    return () => {
+      clearInterval(intervalId);
+      clearTimeout(timeoutId);
+    };
+
   }
   , [isDark])
 
@@ -31,6 +50,7 @@ function App() {
     <div className={isDark? 
     "app dark" : "app"
     }>
+       <div className="transition-wrapper"></div>
       <div className="container">
         <div className='hang-lights' >
             <img height={600} src={isLight ?  glow : lights} alt="lights" />

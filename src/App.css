@@ -9,6 +9,7 @@
   overflow: scroll;
   position: absolute;
   z-index: -1;
+  color : #141414;
 }
 
 .dark{
@@ -16,7 +17,6 @@
   color: #f1f3f2;
   transition :  ease-in 1s;
 }
-
 
 .add-margin{
   margin: 0 5vw;
@@ -143,6 +143,18 @@
   font-weight: 500;
   color: #141414;
   margin-bottom: 1vw;
+  /* mix-blend-mode: difference; */
+  animation: slide 2s ease-in-out;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateY(-100px) scale(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 .mockup{
@@ -152,6 +164,33 @@
   justify-content: center;
   align-items: center;
   margin-top: 2vw;
+
+  transform: scale(1.1);
+  animation: phone 2s ease-in-out;
+}
+
+@keyframes phone {
+
+  0% {
+    /* transform: translateY(-600px);
+    transform: scale(0.1); */
+
+    transform: translateY(-600px) scale(0.4);
+  }
+
+  50% {
+    transform: translateY(-10px) scale(0.7);
+  }
+
+  80% {
+    transform: translateY(5);
+  }
+
+  /* make it bigger */
+  100% {
+    transform: translateY(0) scale(1.1);
+  }
+  
 }
 
 .main-bottom{
@@ -163,6 +202,7 @@
   /* flex-wrap: wrap; */
   z-index: 1;
   overflow: hidden;
+  
 }
 
 .main-bottom p{
@@ -170,7 +210,24 @@
   color: rgb(146, 146, 146);
   margin-top: 1vw;
   margin-right: 15px;
+  /* appear from left */
+  animation: slide-from-left 1s ease-in-out;
+  transition: fade;
+  
 }
+
+@keyframes slide-from-left {
+  0% {
+    transform: translateX(-500px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+  
+}
+
+
 
 .toggle{
   font-size: 5rem;
@@ -178,6 +235,8 @@
   padding: 0;
   border: none;
   width: 10px;
+
+  animation: slide 1s ease-in-out;
 }
 
 .active{
@@ -198,6 +257,20 @@
   overflow: hidden;
   margin: 0;
   padding: 0;
+  animation: appear 1s ease-in-out;
+  
+}
+
+/* hang lights animation appear from top */
+
+
+@keyframes appear{
+  0%{
+    top: -100px;
+  }
+  100%{
+    top: 0;
+  }
 }
 
 .about-section{
@@ -469,7 +542,11 @@
   }
 
   .navbar nav a{
-    margin: 0 10px;
+    margin: 0px 10px;
+  }
+
+  .dark-mode-nav nav a{
+    margin: 0px 10px;
   }
 
   .app-download{
