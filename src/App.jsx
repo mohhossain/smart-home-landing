@@ -50,7 +50,15 @@ function App() {
     <div className={isDark? 
     "app dark" : "app"
     }>
-       <div className="transition-wrapper"></div>
+      <div className="smart">
+        <h1> Smart </h1>
+      </div>
+
+      <div className="ready" >
+        <h1 > Ready </h1>
+      </div>
+      
+      <div className="transition-wrapper"></div>
       <div className="container">
         <div className='hang-lights' >
             <img height={600} src={isLight ?  glow : lights} alt="lights" />
