@@ -3,7 +3,7 @@ import footer from '../assets/footer.png'
 import { FaGooglePlay } from "react-icons/fa";
 import { IoLogoApple } from "react-icons/io5";
 
-function Footer() {
+function Footer({isDark}) {
   return (
     <div className='footer add-margin'>
 
@@ -14,9 +14,13 @@ function Footer() {
             <div className='footer-buttons'>
                 <p>Get started</p>
 
-                <div className="app-download">
-                    <button> <IoLogoApple /> App Store</button>
-                    <button><FaGooglePlay/> Google Play</button>
+                <div className="app-download" >
+                    <button style={
+                    isDark ? {backgroundColor: "#000000"} : {}
+                }> <IoLogoApple /> App Store</button>
+                    <button style={
+                    isDark ? {backgroundColor: "#000000"} : {}
+                }><FaGooglePlay/> Google Play</button>
                 </div>
             </div>
         </div>

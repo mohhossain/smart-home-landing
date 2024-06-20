@@ -30,7 +30,8 @@
   display: flex;
   justify-content: start;
   mix-blend-mode:overlay;
-  font-size: 10vw;
+  font-size: 12vw;
+ 
   z-index: -1;
   position: absolute;
   bottom: 10vw;
@@ -45,7 +46,7 @@
   display: flex;
   justify-content: end;
   mix-blend-mode:overlay;
-  font-size: 10vw;
+  font-size: 12vw;
   z-index: -1;
   position: absolute;
 }

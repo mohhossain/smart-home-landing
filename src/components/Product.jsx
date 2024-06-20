@@ -1,8 +1,15 @@
 import React from "react";
 
-function Product({ product }) {
+const darkModeStyles = {
+  backgroundColor: "#000000",
+  color: "#f1f3f2",
+};
+
+function Product({ product, isDark }) {
   return (
-    <div className="product-card">
+    <div className="product-card" style={
+      isDark ? darkModeStyles : {}
+    }>
       <div className="product-image">
         <img src={product.image} alt="product" className="unselectable" />
       </div>

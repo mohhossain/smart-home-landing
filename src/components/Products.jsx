@@ -2,7 +2,7 @@ import React from "react";
 import Product from "./Product";
 import { useRef, useState } from "react";
 
-function Products() {
+function Products({isDark}) {
   const products = [
     {
       name: "Robot Vacuum",
@@ -96,7 +96,7 @@ function Products() {
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseLeave}>
         {products.map((product, index) => (
-          <Product key={index} product={product} />
+          <Product key={index} product={product} isDark={isDark} />
         ))}
       </div>
     </div>
